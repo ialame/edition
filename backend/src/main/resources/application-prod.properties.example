@@ -1,0 +1,27 @@
+# ==============================================
+# Configuration de Production - MariaDB
+# ==============================================
+# IMPORTANT: Ce fichier doit être créé manuellement sur le serveur
+# Ne jamais commiter les mots de passe dans Git !
+
+# Base de donnees MariaDB
+spring.datasource.url=jdbc:mariadb://localhost:3306/editiondb
+spring.datasource.username=edition
+spring.datasource.password=VOTRE_MOT_DE_PASSE_ICI
+spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+
+# JPA / Hibernate
+spring.jpa.database-platform=org.hibernate.dialect.MariaDBDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=false
+
+# JWT Configuration (generer une cle secrete forte !)
+jwt.secret=VOTRE_CLE_SECRETE_TRES_LONGUE_ICI_AU_MOINS_256_BITS
+jwt.expiration=86400000
+
+# Desactiver H2 Console en production
+spring.h2.console.enabled=false
+
+# Logs
+logging.level.root=WARN
+logging.level.com.edition=INFO
